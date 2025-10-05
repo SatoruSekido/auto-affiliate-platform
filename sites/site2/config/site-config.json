@@ -1,0 +1,23 @@
+{
+  "siteId": "site2",
+  "siteName": "Tech Comparison Pro",
+  "siteUrl": "https://tech-comparison-pro.vercel.app",
+  "description": "In-depth software and tech product comparisons to help you choose better",
+  "niche": "software-comparisons",
+  "keywords": ["software comparison", "vs", "best", "alternatives", "reviews"],
+  "affiliatePrograms": {
+    "amazon": {
+      "enabled": true,
+      "trackingId": "YOUR_AMAZON_TRACKING_ID"
+    },
+    "shareASale": {
+      "enabled": true,
+      "affiliateId": "YOUR_SHAREASALE_ID"
+    }
+  },
+  "contentStrategy": {
+    "postsPerWeek": 3,
+    "minWordCount": 2000,
+    "targetKeywords": 10
+  }
+}

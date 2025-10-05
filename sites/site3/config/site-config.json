@@ -1,0 +1,23 @@
+{
+  "siteId": "site3",
+  "siteName": "Dev Tips Daily",
+  "siteUrl": "https://dev-tips-daily.vercel.app",
+  "description": "Daily web development tips, tricks, and tutorials for modern developers",
+  "niche": "web-development",
+  "keywords": ["web development", "JavaScript", "React", "tutorials", "coding tips"],
+  "affiliatePrograms": {
+    "amazon": {
+      "enabled": true,
+      "trackingId": "YOUR_AMAZON_TRACKING_ID"
+    },
+    "udemy": {
+      "enabled": true,
+      "affiliateId": "YOUR_UDEMY_ID"
+    }
+  },
+  "contentStrategy": {
+    "postsPerWeek": 4,
+    "minWordCount": 1200,
+    "targetKeywords": 8
+  }
+}

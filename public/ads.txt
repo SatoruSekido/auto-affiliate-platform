@@ -1,0 +1,4 @@
+# Google AdSense (追加後に更新)
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+
+# その他のアフィリエイトプログラムの認証情報をここに追加

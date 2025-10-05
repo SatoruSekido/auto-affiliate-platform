@@ -1,0 +1,23 @@
+{
+  "siteId": "site1",
+  "siteName": "AI Tools Hub",
+  "siteUrl": "https://ai-tools-hub.vercel.app",
+  "description": "Discover and learn the best AI tools to boost your productivity",
+  "niche": "ai-tools",
+  "keywords": ["AI tools", "artificial intelligence", "productivity", "automation", "ChatGPT"],
+  "affiliatePrograms": {
+    "amazon": {
+      "enabled": true,
+      "trackingId": "YOUR_AMAZON_TRACKING_ID"
+    },
+    "clickbank": {
+      "enabled": true,
+      "vendorId": "YOUR_CLICKBANK_ID"
+    }
+  },
+  "contentStrategy": {
+    "postsPerWeek": 3,
+    "minWordCount": 1500,
+    "targetKeywords": 10
+  }
+}

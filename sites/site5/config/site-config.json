@@ -1,0 +1,23 @@
+{
+  "siteId": "site5",
+  "siteName": "Tech How-To Guide",
+  "siteUrl": "https://tech-howto-guide.vercel.app",
+  "description": "Step-by-step tech tutorials and how-to guides for everyone",
+  "niche": "tech-tutorials",
+  "keywords": ["how to", "tutorial", "guide", "tech", "step by step"],
+  "affiliatePrograms": {
+    "amazon": {
+      "enabled": true,
+      "trackingId": "YOUR_AMAZON_TRACKING_ID"
+    },
+    "cj": {
+      "enabled": true,
+      "publisherId": "YOUR_CJ_PUBLISHER_ID"
+    }
+  },
+  "contentStrategy": {
+    "postsPerWeek": 3,
+    "minWordCount": 1800,
+    "targetKeywords": 10
+  }
+}
