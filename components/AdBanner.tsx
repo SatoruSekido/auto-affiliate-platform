@@ -1,7 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
-
 interface AdBannerProps {
   position: 'top' | 'middle' | 'bottom'
   searchTerm?: string
@@ -10,49 +8,51 @@ interface AdBannerProps {
 export default function AdBanner({ position, searchTerm = 'technology' }: AdBannerProps) {
   const amazonTag = process.env.NEXT_PUBLIC_AMAZON_TAG || 'temp-tag-20'
 
-  useEffect(() => {
-    // Amazon Native Shopping Ads のスクリプトを動的に読み込む
-    const script = document.createElement('script')
-    script.src = '//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US'
-    script.async = true
-    document.body.appendChild(script)
+  // Amazon検索結果ページへのリンク（アフィリエイトリンク）
+  const amazonSearchUrl = `https://www.amazon.com/s?k=${encodeURIComponent(searchTerm)}&tag=${amazonTag}`
 
-    return () => {
-      // クリーンアップ
-      if (document.body.contains(script)) {
-        document.body.removeChild(script)
-      }
-    }
-  }, [])
+  // 関連商品キーワード（searchTermに基づいて生成）
+  const relatedProducts = [
+    searchTerm,
+    `${searchTerm} tools`,
+    `${searchTerm} guide`,
+    `best ${searchTerm}`
+  ]
 
   return (
-    <div className="my-8 p-4 bg-gray-50 border border-gray-200 rounded text-center">
-      <div className="text-xs text-gray-500 mb-2">Advertisement</div>
-      <div id={`ad-${position}`} className="min-h-[250px] flex items-center justify-center">
-        {/* Amazon Native Shopping Ads */}
-        <div
-          id={`amzn-assoc-ad-${position}`}
-          dangerouslySetInnerHTML={{
-            __html: `
-              <script type="text/javascript">
-                amzn_assoc_placement = "adunit0";
-                amzn_assoc_search_bar = "true";
-                amzn_assoc_tracking_id = "${amazonTag}";
-                amzn_assoc_ad_mode = "search";
-                amzn_assoc_ad_type = "smart";
-                amzn_assoc_marketplace = "amazon";
-                amzn_assoc_region = "US";
-                amzn_assoc_title = "Shop Related Products";
-                amzn_assoc_default_search_phrase = "${searchTerm}";
-                amzn_assoc_default_category = "All";
-                amzn_assoc_linkid = "ad_${position}_${Date.now()}";
-                amzn_assoc_rows = "2";
-              </script>
-            `
-          }}
-        />
+    <div className="my-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
+      <div className="text-xs text-gray-500 mb-3 uppercase tracking-wide">Recommended Products</div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+        {relatedProducts.map((keyword, index) => (
+          <a
+            key={index}
+            href={`https://www.amazon.com/s?k=${encodeURIComponent(keyword)}&tag=${amazonTag}`}
+            target="_blank"
+            rel="noopener noreferrer nofollow sponsored"
+            className="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all hover:scale-105 border border-gray-200"
+          >
+            <div className="text-sm font-semibold text-blue-600 mb-1 line-clamp-2">
+              {keyword}
+            </div>
+            <div className="text-xs text-gray-500">
+              View on Amazon →
+            </div>
+          </a>
+        ))}
       </div>
-      <p className="text-xs text-gray-500 mt-2">
+
+      <a
+        href={amazonSearchUrl}
+        target="_blank"
+        rel="noopener noreferrer nofollow sponsored"
+        className="inline-block px-6 py-2 bg-amazon-orange hover:bg-orange-500 text-white font-semibold rounded-lg transition-colors"
+        style={{ backgroundColor: '#FF9900' }}
+      >
+        Shop All {searchTerm} Products on Amazon
+      </a>
+
+      <p className="text-xs text-gray-500 mt-4">
         *As an Amazon Associate, we earn from qualifying purchases.
       </p>
     </div>
