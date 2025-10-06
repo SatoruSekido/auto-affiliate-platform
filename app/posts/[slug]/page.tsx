@@ -56,18 +56,18 @@ export default function PostPage({ params }: Props) {
             </div>
           </header>
 
-          <AdBanner position="top" />
+          <AdBanner position="top" searchTerm={post.keywords[0]} />
 
           <div
             className="prose prose-lg max-w-none mb-8"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
-          <AdBanner position="middle" />
+          <AdBanner position="middle" searchTerm={post.keywords[1] || post.keywords[0]} />
 
           <AffiliateLinks keywords={post.keywords} />
 
-          <AdBanner position="bottom" />
+          <AdBanner position="bottom" searchTerm={post.keywords[2] || post.keywords[0]} />
         </article>
       </main>
       <Footer />

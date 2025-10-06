@@ -19,7 +19,7 @@ export default function Home() {
             <p className="text-xl text-gray-600 mb-8">{config.description}</p>
           </section>
 
-          <AdBanner position="top" />
+          <AdBanner position="top" searchTerm={config.keywords[0]} />
 
           <section className="py-8">
             <h2 className="text-3xl font-bold mb-6">Latest Articles</h2>
@@ -40,7 +40,7 @@ export default function Home() {
             </div>
           </section>
 
-          <AdBanner position="middle" />
+          <AdBanner position="middle" searchTerm={config.keywords[1] || config.keywords[0]} />
 
           <section className="py-12 text-center">
             <h2 className="text-2xl font-bold mb-4">
