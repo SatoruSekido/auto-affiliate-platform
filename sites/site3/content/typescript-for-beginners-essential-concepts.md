@@ -1,6 +1,6 @@
 ---
 title: "TypeScript for Beginners: Essential Concepts"
-date: "2025-10-05"
+date: "2025-10-06"
 excerpt: "Discover everything you need to know about typescript for beginners: essential concepts. This comprehensive guide will help you make informed decisions."
 keywords: ["typescript","beginners:","essential","concepts"]
 ---

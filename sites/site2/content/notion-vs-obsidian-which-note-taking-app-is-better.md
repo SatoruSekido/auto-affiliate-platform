@@ -1,6 +1,6 @@
 ---
 title: "Notion vs Obsidian: Which Note-Taking App Is Better?"
-date: "2025-10-05"
+date: "2025-10-06"
 excerpt: "Discover everything you need to know about notion vs obsidian: which note-taking app is better?. This comprehensive guide will help you make informed decisions."
 keywords: ["notion","obsidian:","which","note-taking","better?"]
 ---

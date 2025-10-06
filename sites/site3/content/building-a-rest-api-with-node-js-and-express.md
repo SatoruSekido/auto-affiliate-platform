@@ -1,6 +1,6 @@
 ---
 title: "Building a REST API with Node.js and Express"
-date: "2025-10-05"
+date: "2025-10-06"
 excerpt: "Discover everything you need to know about building a rest api with node.js and express. This comprehensive guide will help you make informed decisions."
 keywords: ["building","rest","with","node.js","express"]
 ---

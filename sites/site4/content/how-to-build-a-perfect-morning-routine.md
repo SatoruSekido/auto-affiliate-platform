@@ -1,6 +1,6 @@
 ---
 title: "How to Build a Perfect Morning Routine"
-date: "2025-10-05"
+date: "2025-10-06"
 excerpt: "Discover everything you need to know about how to build a perfect morning routine. This comprehensive guide will help you make informed decisions."
 keywords: ["build","perfect","morning","routine"]
 ---

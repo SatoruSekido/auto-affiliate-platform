@@ -1,6 +1,6 @@
 ---
 title: "Setting Up a Professional Blog with WordPress"
-date: "2025-10-05"
+date: "2025-10-06"
 excerpt: "Discover everything you need to know about setting up a professional blog with wordpress. This comprehensive guide will help you make informed decisions."
 keywords: ["setting","professional","blog","with","wordpress"]
 ---

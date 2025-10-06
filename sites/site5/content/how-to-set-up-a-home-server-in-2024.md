@@ -1,6 +1,6 @@
 ---
 title: "How to Set Up a Home Server in 2024"
-date: "2025-10-05"
+date: "2025-10-06"
 excerpt: "Discover everything you need to know about how to set up a home server in 2024. This comprehensive guide will help you make informed decisions."
 keywords: ["home","server","2024"]
 ---

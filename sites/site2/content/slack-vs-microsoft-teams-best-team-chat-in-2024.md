@@ -1,6 +1,6 @@
 ---
 title: "Slack vs Microsoft Teams: Best Team Chat in 2024"
-date: "2025-10-05"
+date: "2025-10-06"
 excerpt: "Discover everything you need to know about slack vs microsoft teams: best team chat in 2024. This comprehensive guide will help you make informed decisions."
 keywords: ["slack","microsoft","teams:","best","team"]
 ---

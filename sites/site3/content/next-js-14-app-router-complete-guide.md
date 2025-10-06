@@ -1,6 +1,6 @@
 ---
 title: "Next.js 14 App Router: Complete Guide"
-date: "2025-10-05"
+date: "2025-10-06"
 excerpt: "Discover everything you need to know about next.js 14 app router: complete guide. This comprehensive guide will help you make informed decisions."
 keywords: ["next.js","router:","complete","guide"]
 ---

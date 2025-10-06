@@ -1,6 +1,6 @@
 ---
 title: "Complete Guide to Git and GitHub for Beginners"
-date: "2025-10-05"
+date: "2025-10-06"
 excerpt: "Discover everything you need to know about complete guide to git and github for beginners. This comprehensive guide will help you make informed decisions."
 keywords: ["complete","guide","github","beginners"]
 ---

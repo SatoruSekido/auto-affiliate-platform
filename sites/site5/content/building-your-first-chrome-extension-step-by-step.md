@@ -1,6 +1,6 @@
 ---
 title: "Building Your First Chrome Extension: Step by Step"
-date: "2025-10-05"
+date: "2025-10-06"
 excerpt: "Discover everything you need to know about building your first chrome extension: step by step. This comprehensive guide will help you make informed decisions."
 keywords: ["building","your","first","chrome","extension:"]
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Zoom vs Google Meet: Video Conferencing Showdown"
-date: "2025-10-05"
+date: "2025-10-06"
 excerpt: "Discover everything you need to know about zoom vs google meet: video conferencing showdown. This comprehensive guide will help you make informed decisions."
 keywords: ["zoom","google","meet:","video","conferencing"]
 ---
