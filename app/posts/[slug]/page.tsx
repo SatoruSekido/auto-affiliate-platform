@@ -1,9 +1,11 @@
 import { notFound } from 'next/navigation'
 import { getAllPosts, getPostBySlug } from '@/lib/posts'
+import { getSiteConfig } from '@/lib/site-config'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AdBanner from '@/components/AdBanner'
 import AffiliateLinks from '@/components/AffiliateLinks'
+import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import type { Metadata } from 'next'
 
 type Props = {
@@ -39,13 +41,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function PostPage({ params }: Props) {
   const post = getPostBySlug(params.slug)
+  const config = getSiteConfig()
 
   if (!post) {
     notFound()
   }
 
+  const articleUrl = `${config.siteUrl}/posts/${post.slug}`
+
   return (
     <>
+      <ArticleJsonLd
+        title={post.title}
+        description={post.excerpt}
+        datePublished={post.date}
+        dateModified={post.date}
+        authorName={config.siteName}
+        url={articleUrl}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: config.siteUrl },
+          { name: 'Posts', url: `${config.siteUrl}/posts` },
+          { name: post.title, url: articleUrl },
+        ]}
+      />
       <Header />
       <main className="min-h-screen">
         <article className="container mx-auto px-4 py-8 max-w-4xl">

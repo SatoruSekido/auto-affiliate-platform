@@ -4,6 +4,7 @@ import { getAllPosts } from '@/lib/posts'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import AdBanner from '@/components/AdBanner'
+import { WebsiteJsonLd } from '@/components/JsonLd'
 
 export default function Home() {
   const config = getSiteConfig()
@@ -11,6 +12,11 @@ export default function Home() {
 
   return (
     <>
+      <WebsiteJsonLd
+        name={config.siteName}
+        description={config.description}
+        url={config.siteUrl}
+      />
       <Header />
       <main className="min-h-screen">
         <div className="container mx-auto px-4 py-8">
