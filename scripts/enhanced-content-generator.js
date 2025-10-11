@@ -318,21 +318,71 @@ async function main() {
   }
 
   const topics = topicTemplates[config.niche] || topicTemplates['ai-tools'];
-  const numPosts = parseInt(process.env.NUM_POSTS) || 5;
+  const numPosts = parseInt(process.env.NUM_POSTS) || 2;
+  const forceUpdate = process.env.FORCE_UPDATE === 'true';
 
   console.log(`\n🚀 Generating ${numPosts} enhanced posts for ${config.siteName} (${config.niche})\n`);
 
-  for (let i = 0; i < Math.min(numPosts, topics.length); i++) {
-    const topicData = topics[i];
+  let newFilesCount = 0;
+  let updatedFilesCount = 0;
+  let skippedFilesCount = 0;
+
+  // Get existing files to avoid duplicates
+  const existingFiles = fs.existsSync(contentDir) ? fs.readdirSync(contentDir) : [];
+
+  // Select random topics if more posts requested than available
+  const selectedTopics = [];
+  const availableTopics = [...topics];
+
+  while (selectedTopics.length < numPosts && availableTopics.length > 0) {
+    const randomIndex = Math.floor(Math.random() * availableTopics.length);
+    selectedTopics.push(availableTopics[randomIndex]);
+
+    // If we've used all topics, restart but keep going
+    if (selectedTopics.length < numPosts && availableTopics.length === 1) {
+      availableTopics.push(...topics);
+    } else {
+      availableTopics.splice(randomIndex, 1);
+    }
+  }
+
+  for (let i = 0; i < selectedTopics.length; i++) {
+    const topicData = selectedTopics[i];
     const { slug, content } = generateEnhancedContent(topicData);
     const filePath = path.join(contentDir, `${slug}.md`);
 
+    const fileExists = fs.existsSync(filePath);
+
+    if (fileExists && !forceUpdate) {
+      const existingContent = fs.readFileSync(filePath, 'utf-8');
+      if (existingContent === content) {
+        console.log(`⏭️  Skipped: ${slug}.md (no changes)`);
+        skippedFilesCount++;
+        continue;
+      }
+      updatedFilesCount++;
+      console.log(`🔄 Updated: ${slug}.md (${content.length} characters)`);
+    } else if (fileExists && forceUpdate) {
+      updatedFilesCount++;
+      console.log(`🔄 Force updated: ${slug}.md (${content.length} characters)`);
+    } else {
+      newFilesCount++;
+      console.log(`✅ Created: ${slug}.md (${content.length} characters)`);
+    }
+
     fs.writeFileSync(filePath, content);
-    console.log(`✅ Generated: ${slug}.md (${content.length} characters)`);
   }
 
-  console.log(`\n🎉 Successfully generated ${Math.min(numPosts, topics.length)} high-quality posts!\n`);
-  console.log(`📊 Total content size: ${fs.readdirSync(contentDir).length} files\n`);
+  console.log(`\n🎉 Generation complete!`);
+  console.log(`📝 New files: ${newFilesCount}`);
+  console.log(`🔄 Updated files: ${updatedFilesCount}`);
+  console.log(`⏭️  Skipped files: ${skippedFilesCount}`);
+  console.log(`📊 Total files in directory: ${fs.readdirSync(contentDir).length}\n`);
+
+  if (newFilesCount === 0 && updatedFilesCount === 0) {
+    console.log(`ℹ️  No changes made. All content is already up to date.`);
+    console.log(`💡 Tip: Use FORCE_UPDATE=true to regenerate existing files with updated dates.`);
+  }
 }
 
 main().catch(console.error);

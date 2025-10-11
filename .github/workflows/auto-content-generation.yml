@@ -34,6 +34,7 @@ jobs:
         env:
           SITE_ID: ${{ matrix.site }}
           NUM_POSTS: 2
+          FORCE_UPDATE: true
           NEXT_PUBLIC_AMAZON_TAG: ${{ secrets.AMAZON_TAG }}
           # OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} # オプション
         run: npm run generate-enhanced
