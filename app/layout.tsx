@@ -19,18 +19,32 @@ export async function generateMetadata(): Promise<Metadata> {
     description: config.description,
     keywords: config.keywords,
     authors: [{ name: config.siteName }],
+    creator: config.siteName,
+    publisher: config.siteName,
+    category: config.niche,
     openGraph: {
       type: 'website',
       locale: 'en_US',
+      alternateLocale: ['ja_JP', 'es_ES', 'fr_FR', 'de_DE', 'zh_CN'],
       url: config.siteUrl,
       siteName: config.siteName,
       title: config.siteName,
       description: config.description,
+      images: [
+        {
+          url: `${config.siteUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: config.siteName,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: config.siteName,
       description: config.description,
+      creator: '@' + config.siteName.toLowerCase().replace(/\s/g, ''),
+      images: [`${config.siteUrl}/og-image.png`],
     },
     robots: {
       index: true,
@@ -41,6 +55,22 @@ export async function generateMetadata(): Promise<Metadata> {
         'max-video-preview': -1,
         'max-image-preview': 'large',
         'max-snippet': -1,
+      },
+    },
+    verification: {
+      google: 'google-site-verification-code',
+      yandex: 'yandex-verification-code',
+      yahoo: 'yahoo-site-verification-code',
+    },
+    alternates: {
+      canonical: config.siteUrl,
+      languages: {
+        'en-US': config.siteUrl,
+        'ja-JP': `${config.siteUrl}/ja`,
+        'es-ES': `${config.siteUrl}/es`,
+        'fr-FR': `${config.siteUrl}/fr`,
+        'de-DE': `${config.siteUrl}/de`,
+        'zh-CN': `${config.siteUrl}/zh`,
       },
     },
   }
