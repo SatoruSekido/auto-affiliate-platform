@@ -12,10 +12,14 @@ jobs:
     strategy:
       matrix:
         site: [site1, site2, site3, site4, site5]
+      max-parallel: 1  # 1つずつ実行してgitコンフリクトを回避
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -39,9 +43,30 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add sites/${{ matrix.site }}/content/
-          git diff --staged --quiet || git commit -m "Auto-generate content for ${{ matrix.site }}"
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🤖 Auto-generate content for ${{ matrix.site }}
 
-      - name: Trigger Vercel deployment
+            Generated $(date +%Y-%m-%d) by GitHub Actions
+
+            Co-Authored-By: GitHub Actions <action@github.com>"
+            git pull --rebase origin main
+            git push origin main
+          fi
+
+      - name: Trigger Vercel Deployment (optional)
         if: success()
-        run: echo "Content generated and committed for ${{ matrix.site }}"
+        env:
+          DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          echo "✅ Content generated and committed for ${{ matrix.site }}"
+          if [ -n "$DEPLOY_HOOK_URL" ]; then
+            echo "🚀 Triggering Vercel deployment via Deploy Hook..."
+            response=$(curl -s -X POST "$DEPLOY_HOOK_URL")
+            echo "Response: $response"
+            echo "✅ Deploy hook triggered"
+          else
+            echo "ℹ️ VERCEL_DEPLOY_HOOK not set (optional)"
+            echo "Vercel will automatically deploy on push to main branch"
+          fi
