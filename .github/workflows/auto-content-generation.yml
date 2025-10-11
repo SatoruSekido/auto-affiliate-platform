@@ -55,18 +55,52 @@ jobs:
             git push origin main
           fi
 
-      - name: Trigger Vercel Deployment (optional)
+      - name: Trigger Vercel Deployment for ${{ matrix.site }}
         if: success()
         env:
-          DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+          SITE_ID: ${{ matrix.site }}
+          DEPLOY_HOOK_SITE1: ${{ secrets.VERCEL_DEPLOY_HOOK_SITE1 }}
+          DEPLOY_HOOK_SITE2: ${{ secrets.VERCEL_DEPLOY_HOOK_SITE2 }}
+          DEPLOY_HOOK_SITE3: ${{ secrets.VERCEL_DEPLOY_HOOK_SITE3 }}
+          DEPLOY_HOOK_SITE4: ${{ secrets.VERCEL_DEPLOY_HOOK_SITE4 }}
+          DEPLOY_HOOK_SITE5: ${{ secrets.VERCEL_DEPLOY_HOOK_SITE5 }}
         run: |
-          echo "✅ Content generated and committed for ${{ matrix.site }}"
+          echo "✅ Content generated and committed for $SITE_ID"
+
+          # Select the appropriate Deploy Hook for this site
+          case $SITE_ID in
+            site1)
+              DEPLOY_HOOK_URL=$DEPLOY_HOOK_SITE1
+              ;;
+            site2)
+              DEPLOY_HOOK_URL=$DEPLOY_HOOK_SITE2
+              ;;
+            site3)
+              DEPLOY_HOOK_URL=$DEPLOY_HOOK_SITE3
+              ;;
+            site4)
+              DEPLOY_HOOK_URL=$DEPLOY_HOOK_SITE4
+              ;;
+            site5)
+              DEPLOY_HOOK_URL=$DEPLOY_HOOK_SITE5
+              ;;
+            *)
+              echo "⚠️ Unknown SITE_ID: $SITE_ID"
+              DEPLOY_HOOK_URL=""
+              ;;
+          esac
+
+          # Trigger deployment if Deploy Hook is configured
           if [ -n "$DEPLOY_HOOK_URL" ]; then
-            echo "🚀 Triggering Vercel deployment via Deploy Hook..."
-            response=$(curl -s -X POST "$DEPLOY_HOOK_URL")
-            echo "Response: $response"
-            echo "✅ Deploy hook triggered"
+            echo "🚀 Triggering Vercel deployment for $SITE_ID via Deploy Hook..."
+            response=$(curl -s -w "\nHTTP Status: %{http_code}" -X POST "$DEPLOY_HOOK_URL")
+            echo "$response"
+            echo "✅ Deploy hook triggered for $SITE_ID"
           else
-            echo "ℹ️ VERCEL_DEPLOY_HOOK not set (optional)"
+            echo "ℹ️ Deploy hook not configured for $SITE_ID (optional)"
             echo "Vercel will automatically deploy on push to main branch"
+            echo ""
+            echo "To set up Deploy Hook for $SITE_ID:"
+            echo "1. Create Deploy Hook in Vercel Dashboard for this project"
+            echo "2. Add secret VERCEL_DEPLOY_HOOK_$(echo $SITE_ID | tr '[:lower:]' '[:upper:]') to GitHub"
           fi
