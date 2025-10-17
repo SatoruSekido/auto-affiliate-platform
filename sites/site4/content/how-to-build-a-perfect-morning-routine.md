@@ -1,6 +1,6 @@
 ---
 title: "How to Build a Perfect Morning Routine"
-date: "2025-10-13"
+date: "2025-10-17"
 excerpt: "Comprehensive guide to how to build a perfect morning routine. Learn everything you need to know with expert insights, practical tips, and recommended tools."
 keywords: ["morning routine","productivity","habits","self-improvement"]
 ---
@@ -221,7 +221,7 @@ For more in-depth learning:
 - Industry blogs and newsletters
 - Books and comprehensive guides
 
-*Last updated: 2025-10-13*
+*Last updated: 2025-10-17*
 
 ---
 
