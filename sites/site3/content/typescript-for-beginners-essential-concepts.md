@@ -1,6 +1,6 @@
 ---
 title: "TypeScript for Beginners: Essential Concepts"
-date: "2025-10-11"
+date: "2025-10-20"
 excerpt: "Comprehensive guide to typescript for beginners: essential concepts. Learn everything you need to know with expert insights, practical tips, and recommended tools."
 keywords: ["TypeScript","JavaScript","programming","beginners","tutorial"]
 ---
@@ -221,7 +221,7 @@ For more in-depth learning:
 - Industry blogs and newsletters
 - Books and comprehensive guides
 
-*Last updated: 2025-10-11*
+*Last updated: 2025-10-20*
 
 ---
 
