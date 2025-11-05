@@ -1,6 +1,6 @@
 ---
 title: "Setting Up a Professional Blog with WordPress"
-date: "2025-10-31"
+date: "2025-11-05"
 excerpt: "Comprehensive guide to setting up a professional blog with wordpress. Learn everything you need to know with expert insights, practical tips, and recommended tools."
 keywords: ["WordPress","blogging","tutorial","website"]
 ---
@@ -221,7 +221,7 @@ For more in-depth learning:
 - Industry blogs and newsletters
 - Books and comprehensive guides
 
-*Last updated: 2025-10-31*
+*Last updated: 2025-11-05*
 
 ---
 
