@@ -1,6 +1,6 @@
 ---
 title: "Next.js 14 App Router: Complete Guide"
-date: "2025-11-10"
+date: "2025-11-14"
 excerpt: "Comprehensive guide to next.js 14 app router: complete guide. Learn everything you need to know with expert insights, practical tips, and recommended tools."
 keywords: ["Next.js","App Router","React","web development","tutorial"]
 ---
@@ -221,7 +221,7 @@ For more in-depth learning:
 - Industry blogs and newsletters
 - Books and comprehensive guides
 
-*Last updated: 2025-11-10*
+*Last updated: 2025-11-14*
 
 ---
 
