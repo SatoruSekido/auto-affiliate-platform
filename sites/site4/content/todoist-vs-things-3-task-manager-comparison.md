@@ -1,6 +1,6 @@
 ---
 title: "Todoist vs Things 3: Task Manager Comparison"
-date: "2025-11-24"
+date: "2025-11-26"
 excerpt: "Comprehensive guide to todoist vs things 3: task manager comparison. Learn everything you need to know with expert insights, practical tips, and recommended tools."
 keywords: ["Todoist","Things 3","task management","productivity"]
 ---
@@ -221,7 +221,7 @@ For more in-depth learning:
 - Industry blogs and newsletters
 - Books and comprehensive guides
 
-*Last updated: 2025-11-24*
+*Last updated: 2025-11-26*
 
 ---
 
