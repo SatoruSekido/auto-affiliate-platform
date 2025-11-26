@@ -1,6 +1,6 @@
 ---
 title: "Figma vs Adobe XD: Complete Design Tool Comparison"
-date: "2025-11-19"
+date: "2025-11-26"
 excerpt: "Comprehensive guide to figma vs adobe xd: complete design tool comparison. Learn everything you need to know with expert insights, practical tips, and recommended tools."
 keywords: ["Figma","Adobe XD","design tools","UI UX","comparison"]
 ---
@@ -221,7 +221,7 @@ For more in-depth learning:
 - Industry blogs and newsletters
 - Books and comprehensive guides
 
-*Last updated: 2025-11-19*
+*Last updated: 2025-11-26*
 
 ---
 
