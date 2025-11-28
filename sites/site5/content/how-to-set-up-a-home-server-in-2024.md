@@ -1,6 +1,6 @@
 ---
 title: "How to Set Up a Home Server in 2024"
-date: "2025-11-26"
+date: "2025-11-28"
 excerpt: "Comprehensive guide to how to set up a home server in 2024. Learn everything you need to know with expert insights, practical tips, and recommended tools."
 keywords: ["home server","NAS","tech tutorial","self-hosting"]
 ---
@@ -221,7 +221,7 @@ For more in-depth learning:
 - Industry blogs and newsletters
 - Books and comprehensive guides
 
-*Last updated: 2025-11-26*
+*Last updated: 2025-11-28*
 
 ---
 
