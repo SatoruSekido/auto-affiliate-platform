@@ -1,6 +1,6 @@
 ---
 title: "How to Automate Tasks with Python Scripts"
-date: "2025-12-05"
+date: "2025-12-08"
 excerpt: "Comprehensive guide to how to automate tasks with python scripts. Learn everything you need to know with expert insights, practical tips, and recommended tools."
 keywords: ["Python","automation","scripting","programming"]
 ---
@@ -221,7 +221,7 @@ For more in-depth learning:
 - Industry blogs and newsletters
 - Books and comprehensive guides
 
-*Last updated: 2025-12-05*
+*Last updated: 2025-12-08*
 
 ---
 

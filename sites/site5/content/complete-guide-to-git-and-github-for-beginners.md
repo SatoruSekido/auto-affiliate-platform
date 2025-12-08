@@ -1,6 +1,6 @@
 ---
 title: "Complete Guide to Git and GitHub for Beginners"
-date: "2025-12-01"
+date: "2025-12-08"
 excerpt: "Comprehensive guide to complete guide to git and github for beginners. Learn everything you need to know with expert insights, practical tips, and recommended tools."
 keywords: ["Git","GitHub","version control","tutorial","beginners"]
 ---
@@ -221,7 +221,7 @@ For more in-depth learning:
 - Industry blogs and newsletters
 - Books and comprehensive guides
 
-*Last updated: 2025-12-01*
+*Last updated: 2025-12-08*
 
 ---
 
